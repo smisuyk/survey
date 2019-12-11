@@ -9,94 +9,41 @@ namespace Survey.App
     class Program
     {
         static void Main(string[] args)
+
         {
-            var question1 = "How long did dinosaurs grow?";
-            var rightAnswer1 = "50";
-            var question2 = "How is kmc decoded?";
-            var rightAnswer2 = "Master of Sports";
-            var question3 = "who is the top 1 of the world by cs go?";
-            var rightAnswer3 = "Simpleo";
-            var question4 = "what year did the porsche 911 appear?";
-            var rightAnswer4 = "1964";
-            var question5 = "The capital of Japan?";
-            var rightAnswer5 = "Tokyo";
-            double a = 0;
-
-
-            Console.WriteLine(question1);
-            var answer1 = Console.ReadLine();
-
-            Console.WriteLine("Results:");
-            if (answer1 == rightAnswer1)
+            int a = 0;
+            Console.WriteLine("qoestion!");
+            string[] rightAnswer = new string[5] { "50", "Master of Sports", "Simpleo", "1964", "Tokyo" };
+            string[] question = new string[5] { "How long did dinosaurs grow?", "How is kmc decoded?", "who is the top 1 of the world by cs go?", "what year did the porsche 911 appear?", "The capital of Japan?" };
+            for (int i = 0; i < question.Length; i++)
             {
+                Console.WriteLine(question[i]);
+                Console.WriteLine();
+                if (question[0] == rightAnswer[0])
+                {
+                    Console.WriteLine("You are right!", a++);
+                    Console.WriteLine(question[1]);
+                };
+                Console.Read();
+
+            }
+        
+
+            return;
+            Console.WriteLine();
+            if (question[0] == rightAnswer[0]) {
                 Console.WriteLine("You are right!");
-                a++;
+          
             }
-            else
-            {
-                Console.WriteLine("Opps! The correct answer is '50'");
-            }
-            Console.WriteLine(question2);
-            var answer2 = Console.ReadLine();
 
-            Console.WriteLine("Results:");
-            if (answer2 == rightAnswer2)
+            for (int i = 0; i < question.Length; i++)
             {
-                Console.WriteLine("You are right!");
-                a++;
+                Console.WriteLine(question[i]);
+                
             }
-            else
-            {
-                Console.WriteLine("Opps! The correct answer is 'Master of Sports'");
-            }
-            Console.WriteLine(question3);
-            var answer3 = Console.ReadLine();
-
-            Console.WriteLine("Results:");
-            if (answer3 == rightAnswer3)
-            {
-                Console.WriteLine("You are right!");
-                a++;
-            }
-            else
-            {
-                Console.WriteLine("Opps! The correct answer is 'Simpleo'");
-            }
-            Console.WriteLine(question4);
-            var answer4 = Console.ReadLine();
-            Console.WriteLine("Result:");
-            if (answer4 == rightAnswer4)
-
-            {
-                Console.WriteLine("You are right!");
-                a++;
-            }
-            else
-            {
-                Console.WriteLine("Opps! The correct answer is '1964'");
-            }
-            Console.WriteLine(question5);
-            var answer5 = Console.ReadLine();
-
-            Console.WriteLine("Results:");
-            if (answer5 == rightAnswer5)
-            {
-                Console.WriteLine("You are right!");
-                a++;
-            }
-            else
-            {
-                Console.WriteLine("Opps! The correct answer is 'Tokyo'");
-            }
-            Console.WriteLine("results %");
-
-            a = a * 100 / 5;
-            Console.WriteLine(a);
-            
             
 
-            
-         }
+        }
 
 
 
