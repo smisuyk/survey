@@ -20,6 +20,9 @@ namespace Survey.App
             var rightAnswer4 = "1964";
             var question5 = "The capital of Japan?";
             var rightAnswer5 = "Tokyo";
+            double a = 0;
+
+
             Console.WriteLine(question1);
             var answer1 = Console.ReadLine();
 
@@ -27,23 +30,25 @@ namespace Survey.App
             if (answer1 == rightAnswer1)
             {
                 Console.WriteLine("You are right!");
+                a++;
             }
             else
             {
                 Console.WriteLine("Opps! The correct answer is '50'");
             }
-                Console.WriteLine(question2);
-                var answer2 = Console.ReadLine();
+            Console.WriteLine(question2);
+            var answer2 = Console.ReadLine();
 
-                Console.WriteLine("Results:");
-                if (answer2 == rightAnswer2)
-                {
-                    Console.WriteLine("You are right!");
-                }
-                else
-                {
-                    Console.WriteLine("Opps! The correct answer is 'Master of Sports'");
-                }
+            Console.WriteLine("Results:");
+            if (answer2 == rightAnswer2)
+            {
+                Console.WriteLine("You are right!");
+                a++;
+            }
+            else
+            {
+                Console.WriteLine("Opps! The correct answer is 'Master of Sports'");
+            }
             Console.WriteLine(question3);
             var answer3 = Console.ReadLine();
 
@@ -51,6 +56,7 @@ namespace Survey.App
             if (answer3 == rightAnswer3)
             {
                 Console.WriteLine("You are right!");
+                a++;
             }
             else
             {
@@ -60,10 +66,12 @@ namespace Survey.App
             var answer4 = Console.ReadLine();
             Console.WriteLine("Result:");
             if (answer4 == rightAnswer4)
+
             {
                 Console.WriteLine("You are right!");
+                a++;
             }
-            else 
+            else
             {
                 Console.WriteLine("Opps! The correct answer is '1964'");
             }
@@ -74,12 +82,25 @@ namespace Survey.App
             if (answer5 == rightAnswer5)
             {
                 Console.WriteLine("You are right!");
+                a++;
             }
             else
             {
                 Console.WriteLine("Opps! The correct answer is 'Tokyo'");
             }
+            Console.WriteLine("results %");
 
-        }
+            a = a * 100 / 5;
+            Console.WriteLine(a);
+            
+            
+
+            
+         }
+
+
+
+
+        
     }
 }
