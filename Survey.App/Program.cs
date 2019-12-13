@@ -17,7 +17,7 @@ namespace Survey.App
             int i = 0;
             Console.WriteLine("qoestion!");
             string[] rightAnswer = new string[] { "50", "Master of Sports", "Simpleo", "1964", "Tokyo","printer ", "Isaac Newton","programming", "exe", "Марк Цукерберг" };
-            int[] l = new int[10];
+            
             string[] question = new string[] { "How long did dinosaurs grow?",
                 "How is kmc decoded?",
                 "who is the top 1 of the world by cs go?",
@@ -30,7 +30,7 @@ namespace Survey.App
                 "who develope d facebook"};
             Random r = new Random();
            
-            while(i!=10){
+           
 
                 for (i = 0; i < question.Length; i++)
                 {
@@ -45,7 +45,7 @@ namespace Survey.App
 
                     }
                 } 
-            }
+            
             Console.WriteLine("percentage of correct answers");
             o = o * 100 / 10;
             Console.WriteLine(o);
