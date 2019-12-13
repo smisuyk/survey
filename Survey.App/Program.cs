@@ -13,8 +13,11 @@ namespace Survey.App
         {
             string a;
             int o = 0;
+            int j;
+            int i = 0;
             Console.WriteLine("qoestion!");
             string[] rightAnswer = new string[] { "50", "Master of Sports", "Simpleo", "1964", "Tokyo","printer ", "Isaac Newton","programming", "exe", "Марк Цукерберг" };
+            int[] l = new int[10];
             string[] question = new string[] { "How long did dinosaurs grow?",
                 "How is kmc decoded?",
                 "who is the top 1 of the world by cs go?",
@@ -25,18 +28,23 @@ namespace Survey.App
                 "C #, java, c ++ are languages?",
                 "Windows executable?",
                 "who develope d facebook"};
-            
-            for (int i = 0; i < question.Length; i++)
-            {
-                Console.WriteLine(question[i]);
-                
-               a = Console.ReadLine();
-                if (rightAnswer[i] == a) {
-                    o++;
+            Random r = new Random();
+           
+            while(i!=10){
+
+                for (i = 0; i < question.Length; i++)
+                {
+                    j = r.Next(1, 10);
+                    Console.WriteLine(question[j]);
+
+                    a = Console.ReadLine();
                     
-                
-                }
-                
+                    if (rightAnswer[j] == a) {
+                        o++;
+
+
+                    }
+                } 
             }
             Console.WriteLine("percentage of correct answers");
             o = o * 100 / 10;
