@@ -12,12 +12,10 @@ namespace Survey.App
         {
             string a;
             int o = 0;
-            int j=0;
             int i;
-            Console.WriteLine("qoestion!");
-             int[] alredyansswerquestio = new   int[5];
-            string[] rightAnswer = new string[] { "50", "Master of Sports", "Simpleo", "1964", "Tokyo", "printer ", "Isaac Newton", "programming", "exe", "Марк Цукерберг" };
-
+            Console.WriteLine("question!");
+             int[] alredyansswerquestio = new int[5];
+            string[] rightAnswer = new string[] { "50", "Master of Sports", "Simpleo", "1964", "Tokyo", "printer", "Isaac Newton", "programming", "exe", "Марк Цукерберг" };
             string[] question = new string[] { "How long did dinosaurs grow?",
                 "How is kmc decoded?",
                 "who is the top 1 of the world by cs go?",
@@ -30,26 +28,20 @@ namespace Survey.App
                 "who develope d facebook"};
             
             Random random = new Random();
-            for (i = 0; i < question.Length; i++)
+            for (i = 0; i < 5; i++)
             {
-
                 var randomindex= random.Next(0, 10);
-                while (alredyansswerquestio.Contains(randomindex)) ;
+                while (alredyansswerquestio.Contains(randomindex)) 
                 { randomindex = random.Next(0, 10); }
                 alredyansswerquestio[i] = randomindex;
-                Console.WriteLine(question[j]);
-
+                Console.WriteLine(question[randomindex]);
                 a = Console.ReadLine();
-
-                if (rightAnswer[j] == a)
+                if (rightAnswer[randomindex] == a)
                 {
                     o++;
-
-
                 }
             }
-            Console.WriteLine("percentage of correct answers");
-            o = o * 100 / 10;
+            Console.WriteLine("количество правельных ответов ");
             Console.WriteLine(o);
         }
     }
