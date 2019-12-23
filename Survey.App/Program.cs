@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Survey.App
 {
@@ -14,13 +12,21 @@ namespace Survey.App
             string a;
             int o = 0;
             int i;
-            Console.WriteLine("question!");
+         
+            Console.WriteLine("ВОПРОСЫ!");
             int[] alredyansswerquestio = new int[5];
 
-            var question = File.ReadAllLines(@"‪D:\dev\survey\survey\Survey.App\question.txt");
-            var rightAnswer = File.ReadAllLines(@"‪D:\dev\survey\survey\Survey.App\rightAnswer.txt");
-    
-            Random random = new Random();
+            string[] question = File.ReadAllLines(@"..\..\question.txt");
+            string[] rightAnswer = File.ReadAllLines(@"..\..\rightAnswer.txt");
+            Dictionary<string, string> questions= new Dictionary<string, string>();
+            for (i = 0; i < question.Length; i++) {
+                questions.Add(question[i], rightAnswer[i]);
+            }
+             
+            
+
+
+            Random random = new Random(); 
             for (i = 0; i < 5; i++)
             {
                 var randomindex = random.Next(0, 10);
@@ -30,8 +36,12 @@ namespace Survey.App
                 }
                 
                 alredyansswerquestio[i] = randomindex;
-                Console.WriteLine(question[randomindex]);
-                a = Console.ReadLine();
+                Dictionary<string, string> questions = new Dictionary<string, string>();
+                for (i = 0; i < question.Length; i++)
+                {
+                    questions.Add(question[i], rightAnswer[i]);
+                }
+
 
                 if (rightAnswer[randomindex] == a)
                 {
