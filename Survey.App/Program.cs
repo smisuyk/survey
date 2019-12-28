@@ -7,6 +7,8 @@ namespace Survey.App
 {
     class Program
     {
+        private static IEnumerable<KeyValuePair<string, string>> dictionary;
+
         static void Main(string[] args)
         {
             string a;
@@ -17,12 +19,8 @@ namespace Survey.App
             int[] alredyansswerquestio = new int[5];
 
             string[] question = File.ReadAllLines(@"..\..\question.txt");
-            string[] rightAnswer = File.ReadAllLines(@"..\..\rightAnswer.txt");
-            Dictionary<string, string> questions= new Dictionary<string, string>();
-            for (i = 0; i < question.Length; i++) {
-                questions.Add(question[i], rightAnswer[i]);
-            }
-             
+            string [] rightAnswer = File.ReadAllLines(@"..\..\rightAnswer.txt");
+         
             
 
 
@@ -36,20 +34,31 @@ namespace Survey.App
                 }
                 
                 alredyansswerquestio[i] = randomindex;
-                Dictionary<string, string> questions = new Dictionary<string, string>();
-                for (i = 0; i < question.Length; i++)
-                {
-                    questions.Add(question[i], rightAnswer[i]);
-                }
-
+                Console.WriteLine(question[randomindex]);
+                a = Console.ReadLine();
 
                 if (rightAnswer[randomindex] == a)
                 {
                     o++;
                 }
             }
-            Console.WriteLine("количество правельных ответов ");
-            Console.WriteLine(o);
+
+            Dictionary<string, string> questions = new Dictionary<string, string>();
+            for (i = 0; i < 5; i++)
+            {
+                questions.Add(question[i], rightAnswer[i]);
+
+
+                foreach (KeyValuePair<string, string> valuePair in dictionary)
+                {
+                    Console.WriteLine(valuePair.Value);
+                }
+
+                Console.ReadKey();
+
+                Console.WriteLine("количество правельных ответов ");
+                Console.WriteLine(o);
+            }
         }
     }
 }
