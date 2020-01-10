@@ -7,58 +7,51 @@ namespace Survey.App
 {
     class Program
     {
-        private static IEnumerable<KeyValuePair<string, string>> dictionary;
+        public static Dictionary<string, string> Dictionary { get; set; } = new Dictionary<string, string>();
 
         static void Main(string[] args)
         {
-            string a;
-            int o = 0;
-            int i;
-         
-            Console.WriteLine("ВОПРОСЫ!");
-            int[] alredyansswerquestio = new int[5];
+            Dictionary<string, string> questionDictionary = new Dictionary<string, string>();
+            Dictionary<string, string> surveyDictionary = new Dictionary<string, string>();
 
-            string[] question = File.ReadAllLines(@"..\..\question.txt");
-            string [] rightAnswer = File.ReadAllLines(@"..\..\rightAnswer.txt");
-         
             
 
+            string[] questions = File.ReadAllLines(@"..\..\question.txt");
 
-            Random random = new Random(); 
-            for (i = 0; i < 5; i++)
+            // пробежаться по словарю и заполнить его значениями из файла
+            // Fill questionDictionary
+            foreach(var question in questions)
             {
-                var randomindex = random.Next(0, 10);
-                while (alredyansswerquestio.Contains(randomindex))
-                { 
-                    randomindex = random.Next(0, 10);
-                }
-                
-                alredyansswerquestio[i] = randomindex;
-                Console.WriteLine(question[randomindex]);
-                a = Console.ReadLine();
-
-                if (rightAnswer[randomindex] == a)
-                {
-                    o++;
-                }
+                var questionAndAnswer = question.Split(new string[] { "#-#" }, StringSplitOptions.RemoveEmptyEntries);
+                var key = questionAndAnswer[0];
+                var value = questionAndAnswer[1];
+                Dictionary.Add(key, value);
             }
 
-            Dictionary<string, string> questions = new Dictionary<string, string>();
-            for (i = 0; i < 5; i++)
+            // random.Next(0, 5)
+            // Dictionary.Skip(random).Take(5);
+
+            // выбрать 5 рандомных вопросов в словаре
+            // Fill surveyDictionary with 5 questions from questionDictionary (set only Key)
+            
+            Random random = new Random();
+            Console.WriteLine("survey");
+            for (int i = 1; i <= 10; i++) 
             {
-                questions.Add(question[i], rightAnswer[i]);
+                Console.WriteLine("{0} -> {1}", i, random.Next(5));
 
-
-                foreach (KeyValuePair<string, string> valuePair in dictionary)
-                {
-                    Console.WriteLine(valuePair.Value);
-                }
-
-                Console.ReadKey();
-
-                Console.WriteLine("количество правельных ответов ");
-                Console.WriteLine(o);
             }
+
+
+
+
+            // пробежаться по 5 вопросам и задать их пользователю
+            // Fill surveyDictionary Values from the user
+
+                // сравнить ответы пользователя с правильными ответами и вывести результат теста
+
+
+
         }
     }
 }

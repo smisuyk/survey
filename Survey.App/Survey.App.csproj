@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="question.txt" />
-    <Content Include="rightAnswer.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
